@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Create new Book
+    body 
+        h4 
+            a(href='/book') Back to Book
+        h1 Create new Book 
+        form(action="/book/create",method="post")
+            div 
+                label(for='title') Title 
+                input(type="text", name='title', id='title') 
+            div 
+                label(for='author') Author 
+                input(type="text", name='author', id='author')
+            div 
+                label(for='publication') Publication Year 
+                input(type="text", name='publication_year', id='publication')
+            div 
+                label(for='genre') Genre 
+                input(type="text", name='genre', id='genre')      
+            div 
+                input(type="submit", value='Create')     
+

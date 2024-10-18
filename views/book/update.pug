@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Update Book
+    body 
+      
+        h1 Update Book 
+        form(action=`/book/update/${book._id}`,method="post")
+            input(type="hidden" name ="_id" value=book._id)
+            div 
+                label(for='title') Title 
+                input(type="text", name='title', id='title' value=book.title) 
+            div 
+                label(for='author') Author 
+                input(type="text", name='author', id='author' value=book.author)
+            div 
+                label(for='publication') Publication Year 
+                input(type="text", name='publication_year', id='publication' value=book.publication_year)
+            div 
+                label(for='genre') Genre 
+                input(type="text", name='genre', id='genre' value=book.genre)
+            div 
+                input(type="submit", value='Update')
+
+

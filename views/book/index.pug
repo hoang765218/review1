@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Book List
+    body 
+        a(href='/book/create') Create new book
+        h1 Book List
+         form(action="/book/search", method="GET")
+                input(type="text", name="title", placeholder="Search by title", value=name) 
+                button(type="submit") Search
+        table(border="1") 
+            thead 
+                tr 
+                    th Title
+                    th Author 
+                    th Publication Year 
+                    th Genre 
+                    th Action
+            tbody 
+                if books != null 
+                    each book in books
+                        tr  
+                            td=book.title
+                            td=book.author
+                            td=book.publication_year
+                            td=book.genre
+                            td
+                                a(href=`/book/update/${book._id}`) Update
+                                form(action=`/book/delete/${book._id}`, method="POST")
+                                    button(type="submit") Delete
+
+                else           
+                    tr 
+                        td(colspan="5") No Book
